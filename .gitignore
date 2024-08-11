@@ -6,3 +6,5 @@ blazegraph/
 basic/test.json
 /basic/researchspace
 /full-setup/researchspace
+/custom/researchspace/runtime-data/data/repositories/tests/lock
+/custom/researchspace/runtime-data/data/repositories/tests/lock
