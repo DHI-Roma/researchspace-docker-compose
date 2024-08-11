@@ -36,6 +36,9 @@ services:
        # mount folder where temporary files should be stored
        - ./researchspace/data/tmp:/tmp-data:rw
 
+      # mount folder where apps should be stored
+       - ./researchspace/apps:/apps:rw
+
        # runtime data folder with config files and ad-hoc templates 
        - ./researchspace/runtime-data:/runtime-data
     depends_on:
@@ -98,3 +101,19 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
+
+  # digilib:
+  #   image: ${DIGILIB_IMAGE}
+  #   restart: unless-stopped
+  #   mem_limit: ${DIGILIB_MEMORY}
+  #   mem_reservation: ${DIGILIB_MEMORY}
+  #   environment:
+  #     BASEDIR_LIST: /var/lib/images
+  #     IIIF_IMAGE_BASE_URL: "http://localhost:10214/proxy/IIIF/"
+  #   volumes:
+  #     - ./researchspace/data/images/file:/var/lib/images:rw
+  #   logging:
+  #     driver: json-file
+  #     options:
+  #       max-size: "200k"
+  #       max-file: "10"
