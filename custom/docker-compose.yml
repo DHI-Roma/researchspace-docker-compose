@@ -46,7 +46,7 @@ services:
         max-file: "10"
 
   oxigraph:
-    image: oxigraph/oxigraph
+    image: oxigraph/oxigraph:latest
     ports:
       - "7878:7878"
     volumes:

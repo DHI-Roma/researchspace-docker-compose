@@ -9,12 +9,14 @@
 @prefix fedsail: <http://www.openrdf.org/config/sail/federation#> .
 
 [] a rep:Repository;
-  rep:repositoryID "default";
-  rdfs:label "Default G17 HTTP SPARQL Repository";
-  rep:repositoryImpl [
-      rep:repositoryType "researchspace:SPARQLRepository";
-      sparql:query-endpoint <http://oxigraph:7878/query>;
-      sparql:update-endpoint <http://oxigraph:7878/update>;
-      mph:quadMode true;
-      mph:writable false
+    rep:repositoryID "default";
+    rdfs:label "Default G17 HTTP SPARQL Repository";
+    rep:repositoryImpl [
+        rep:repositoryType "researchspace:SPARQLRepository";
+    sparql:query-endpoint <http://oxigraph:7878/query>;
+    sparql:update-endpoint <http://oxigraph:7878/update>;
+    mph:quadMode true;
+    mph:writable true ;
+    mph:silentMode true ;
+    
     ] .
