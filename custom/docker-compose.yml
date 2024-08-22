@@ -13,6 +13,7 @@ services:
       # 3-5. Create storage needed for image upload functionality
       # 6-8. Create temp storage needed for image upload functionality
       # 7. Additional options provided in .env file
+      #         -Dlog4j.configurationFile=file:/runtime-data/log4j2-trace.xml
       PLATFORM_OPTS: >-
         -Dconfig.environment.sparqlEndpoint=http://oxigraph:7878/query
         -Dlog4j.configurationFile=classpath:org/researchspace/logging/log4j2-debug.xml
@@ -46,7 +47,7 @@ services:
         max-file: "10"
 
   oxigraph:
-    image: oxigraph/oxigraph:latest
+    image: ${OXIGRAPH_IMAGE}
     ports:
       - "7878:7878"
     volumes:

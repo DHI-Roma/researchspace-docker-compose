@@ -1,0 +1,37 @@
+<Configuration xmlns:xi="http://www.w3.org/2001/XInclude">
+<Appenders>
+
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] (%F:%L) - %m%n"/>
+    </Console>
+    </Appenders>
+
+  <Loggers>
+
+    <Logger name="org.researchspace" level="trace" additivity="false">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+
+
+    <Logger name="org.eclipse" level="trace" additivity="false">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+    
+    <!-- additional platform specific loggers that can be switched on individually (INFO) -->
+    <Logger name="platform.logging" level="OFF" additivity="false">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+    <Logger name="platform.logging.ephedra.QueryPlanLogger" level="INFO" additivity="true" />
+
+    <!-- https://issues.apache.org/jira/browse/BEANUTILS-477 -->
+    <Logger name="org.apache.commons.beanutils.FluentPropertyBeanIntrospector" level="error" additivity="false">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+
+    <Root level="warn">
+      <AppenderRef ref="STDOUT"/>
+    </Root>
+
+  </Loggers>
+
+</Configuration>
