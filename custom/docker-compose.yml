@@ -52,7 +52,7 @@ services:
       - "7878:7878"
     volumes:
      - ./data_oxigraph:/data
-    command: ["serve", "--location", "/data", "--bind", "0.0.0.0:7878"]
+    command: ["serve", "--location", "/data", "--bind", "0.0.0.0:7878", "--union-default-graph", "--cors"]
 
   # blazegraph:
   #   image: ${BLAZEGRAPH_IMAGE}
