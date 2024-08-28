@@ -54,23 +54,6 @@ services:
      - ./data_oxigraph:/data
     command: ["serve", "--location", "/data", "--bind", "0.0.0.0:7878", "--union-default-graph", "--cors"]
 
-  # blazegraph:
-  #   image: ${BLAZEGRAPH_IMAGE}
-  #   restart: unless-stopped
-  #   mem_limit: ${BLAZEGRAPH_MEMORY}
-  #   mem_reservation: ${BLAZEGRAPH_MEMORY}
-  #   ports:
-  #     - "10215:8080"
-  #   environment:
-  #     JAVA_OPTS: ${BLAZEGRAPH_JAVA_OPTS}
-  #   volumes:
-  #    - ./blazegraph/:/blazegraph-data
-  #   logging:
-  #    driver: json-file
-  #    options:
-  #     max-size: "200k"
-  #     max-file: "10"
-
   digilib:
     image: ${DIGILIB_IMAGE}
     restart: unless-stopped
